@@ -1,22 +1,30 @@
 var myApp=angular.module("myApp",[]);
 
+
 //CONTROLLER FOR INDEX PAGE
 
 myApp.controller('LoginCtrl',function($scope,$http,$window){
 $scope.validate = function(){
-    var username = "sanjib";
-    var password = "sanjib";
-    console.log($scope.user.name + " and " + $scope.user.password);
-    if (($scope.user.name===username)&&($scope.user.password===password)){
-        console.log("user name and password matched");
-        $window.location.href = "/home.html";
-    }
-    else{
-        console.log("user name and password does not matched");
-        alert("User name or Password is incorrect");
-    }
+    console.log($scope.user);
+
+    $http.post('/auth',$scope.user).success(function(response){
+        $scope.answer = response;
+        console.log($scope.answer);
+        if($scope.answer==true){
+            $window.location.href = "/home.html";
+
+        }else{
+            alert('You are not valid Member');
+        }
+
+
+
+
+    });
+   
 };    
 
+$scope.createNewUser = function(){};
 
 
 

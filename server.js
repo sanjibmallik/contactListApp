@@ -10,6 +10,27 @@ var bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(express.static(__dirname + "/public"));
 
+//FOR AUTHENTICATION TO USER LOGIN AND SIGN UP
+app.post('/auth',function(req,res){
+	console.log(req.body.name);
+	console.log(req.body.password);
+	var username = "sanjib";
+	var password = "mallik";
+	if ((req.body.name===username) && (req.body.password===password)){
+		var result = true;
+		res.json(result);
+	}
+	else{
+		var result = false;
+		res.json(result);
+	}
+
+
+
+});
+
+
+
 app.get('/contactList', function(req, res){
     console.log("this is GET reqst");
     db.contactlist.find(function (err, docs){
