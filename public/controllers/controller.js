@@ -1,5 +1,24 @@
 var myApp=angular.module("myApp",[]);
 
+//CONTROLLER FOR INDEX PAGE
+
+myApp.controller('LoginCtrl',function($scope,$http){
+    
+
+
+
+
+
+});
+
+
+
+
+
+
+//CONTROLLER FOR HOME PAGE
+
+
 myApp.controller('AppCtrl',function($scope, $http){
     console.log("done by sanjib"); 
     var refresh = function(){
