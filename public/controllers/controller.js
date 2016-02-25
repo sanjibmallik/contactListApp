@@ -13,6 +13,7 @@ $scope.validate = function(){
     }
     else{
         console.log("user name and password does not matched");
+        alert("User name or Password is incorrect");
     }
 };    
 

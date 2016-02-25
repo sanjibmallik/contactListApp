@@ -85,10 +85,7 @@ app.put('/contactList/:id', function(req, res){
    db.contactlist.findAndModify({query: {_id: mongojs.ObjectId(id)}, update:{$set: {name: req.body.name, email: req.body.email, phone:req.body.phone}},new: true}, function(err, doc){
     res.json(doc);
 	});
-    // db.contactlist.findAndModify({query: {_id: mongojs.ObjectId(id)}, update:{$ser:{name: req.body.name, email: req.body.email, phone:req.body.phone}},new:true }, function(err, docs){
-     //res.json(docs);
-    //});
-    //db.contactlist.update({_id: mongojs.ObjectId(id)},{'name':req.body.name, 'email': req.body.email, 'phone': req.body.phone}, function(err, docs){res.json(docs);});
+   
     
     
 });
